@@ -1,5 +1,5 @@
 # 
-# Archivo para la lógica principal de la API 
+# Archivo para la lógica principal de la API  
 # 
 from fastapi import FastAPI
 from src.core.config import settings
