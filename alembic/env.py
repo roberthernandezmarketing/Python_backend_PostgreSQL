@@ -6,10 +6,11 @@ import os
 from dotenv import load_dotenv
 from src.db.base_class import Base
 # Load Models Author, Post, Tag, Base
+from src.models.author import Author
 
 load_dotenv()
 config = context.config
-print("====== 001 DATABASE_URL:", os.environ.get('DATABASE_URL')) 
+# print("====== 001 DATABASE_URL:", os.environ.get('DATABASE_URL')) 
 config.set_main_option('sqlalchemy.url', os.environ.get('DATABASE_URL'))
 
 if config.config_file_name is not None:
@@ -29,7 +30,6 @@ def run_migrations_offline() -> None:
   with context.begin_transaction():
     context.run_migrations()
 
-
 def run_migrations_online() -> None:
   connectable = engine_from_config(
     config.get_section(config.config_ini_section, {}),
@@ -42,9 +42,8 @@ def run_migrations_online() -> None:
       connection=connection, target_metadata=target_metadata
     )
 
-  with context.begin_transaction():
-    context.run_migrations()
-
+    with context.begin_transaction():
+      context.run_migrations()
 
 if context.is_offline_mode():
   run_migrations_offline()
