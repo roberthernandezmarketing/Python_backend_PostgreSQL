@@ -9,6 +9,7 @@ from src.db.base_class import Base
 
 load_dotenv()
 config = context.config
+print("====== 001 DATABASE_URL:", os.environ.get('DATABASE_URL'))
 config.set_main_option('sqlalchemy.url', os.environ.get('DATABASE_URL'))
 
 if config.config_file_name is not None:
