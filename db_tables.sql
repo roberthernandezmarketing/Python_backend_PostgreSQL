@@ -1,7 +1,7 @@
-SELECT * FROM author;
+SELECT * FROM authors;
 
-SELECT * FROM post;
+SELECT * FROM posts;
 
-SELECT * FROM tag;
+SELECT * FROM tags;
 
 SELECT * FROM post_tag;
