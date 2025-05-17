@@ -6,9 +6,6 @@ from src.db.base_class import Base
 from datetime import datetime
 from src.models.associations import post_tag
 
-# Intermediate table for N:N relationship between TAG & POST
-#   Move it to associations.py
-
 class Post(Base):
   __tablename__ = "posts"
   id = Column(BigInteger, primary_key=True, index=True)
